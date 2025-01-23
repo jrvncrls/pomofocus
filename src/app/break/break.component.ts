@@ -4,16 +4,16 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { TimerComponent } from '../shared/timer/timer.component';
 
 @Component({
-  selector: 'app-focus',
+  selector: 'app-break',
   standalone: true,
   imports: [HeaderComponent, TimerComponent],
-  templateUrl: './focus.component.html',
-  styleUrl: './focus.component.scss',
+  templateUrl: './break.component.html',
+  styleUrl: './break.component.scss',
 })
-export class FocusComponent {
+export class BreakComponent {
   router = inject(Router);
 
-  goToBreak() {
-    this.router.navigate(['/break']);
+  goToFocus() {
+    this.router.navigate(['/']);
   }
 }

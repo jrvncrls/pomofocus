@@ -1,16 +1,17 @@
-import { NgIf } from '@angular/common';
+import { NgIf, NgStyle } from '@angular/common';
 import { Component, computed, input, signal } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-timer',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, NgStyle],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss',
 })
 export class TimerComponent {
-  time = input<number>(0);
+  time = input(0);
+  textColor = input('#4a90e2');
   countdown = computed(() => this.formatTime(this.totalSeconds()));
   private totalSeconds = signal(this.time() * 60); // 25 minutes in seconds
   private timerSubscription!: Subscription;

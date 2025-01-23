@@ -3,9 +3,13 @@
     {{ countdown() }}
   </h1>
   <ng-container *ngIf="!isRunning(); else stopBtn">
-    <button (click)="startCountdown()">Start</button>
+    <button [ngStyle]="{ color: textColor() }" (click)="startCountdown()">
+      Start
+    </button>
   </ng-container>
   <ng-template #stopBtn>
-    <button (click)="stopCountdown()">Stop</button>
+    <button [ngStyle]="{ color: textColor() }" (click)="stopCountdown()">
+      Stop
+    </button>
   </ng-template>
 </div>
