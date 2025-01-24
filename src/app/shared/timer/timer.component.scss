@@ -1,19 +1,43 @@
+@use "../../../styles/mixins.scss" as m;
+
 .timer-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     font-size: 6rem;
     letter-spacing: 0.5rem;
+    pointer-events: none;
+    font-weight: 400;
+
+    @include m.tablet {
+      font-size: 10rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
   }
 
   button {
     font-size: 1.5rem;
     background-color: #ffffff;
-    width: 150px;
-    height: 50px;
-    padding: 0.5rem 1rem;
+    width: 70px;
+    height: 70px;
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.1); // Moves up and scales up slightly
+    }
+
+    .material-symbols-outlined {
+      font-size: 3rem;
+    }
   }
 }

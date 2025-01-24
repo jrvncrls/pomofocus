@@ -1,10 +1,12 @@
 <div class="app-container">
   <app-header></app-header>
 
-  <div class="nav-bar">
-    <label (click)="goToFocus()">Focus</label>
-    <label class="highlight">Break</label>
-  </div>
+  <div class="modal-container">
+    <div class="nav-bar">
+      <label (click)="goToFocus()">Focus</label>
+      <label class="highlight">Break</label>
+    </div>
 
-  <app-timer [time]="5" [textColor]="'#26c6da'"></app-timer>
+    <app-timer [time]="5" [textColor]="'#26c6da'"></app-timer>
+  </div>
 </div>

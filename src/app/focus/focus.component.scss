@@ -10,26 +10,38 @@
     transition: background-color 0.3s ease; /* Smooth color transition */
     color: #ffffff;
 
-    .nav-bar {
-      text-decoration: none;
-      font-size: 2rem;
-      color: rgb(255, 255, 255, 0.3);
+    .modal-container {
       display: flex;
-      gap: 6rem;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
 
-      @include m.tablet {
-        gap: 15rem;
-      }
+      .nav-bar {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255, 0.5);
+        display: flex;
+        gap: 6rem;
+        justify-content: center;
 
-      label {
-        cursor: pointer;
+        @include m.tablet {
+          gap: 10rem;
+        }
 
-        &.highlight {
-          color: #ffffff;
+        label {
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-5px) scale(1.1); // Moves up and scales up slightly
+            color: #ffffff;
+          }
+
+          &.highlight {
+            color: #ffffff;
+          }
         }
       }
     }
-
-    
   }
 }
